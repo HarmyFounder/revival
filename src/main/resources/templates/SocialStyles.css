@@ -1,0 +1,94 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.section-top{
+    border-bottom: rgb(26, 30, 252);
+    position: fixed; /* Закрепляет секцию */
+    width: 100%;
+    .wrapper-inner{
+        padding-top:2vh;
+        padding-bottom: 1vh;
+
+    }
+    background-color:white;
+}
+
+button{
+    border: medium none;
+	background-image: none;
+	background: transparent;
+	float: left;
+	background-color: transparent;
+    align-items:center;
+    cursor: pointer;
+    color: rgb(26, 30, 252);
+    font-size:35px;
+}
+
+button:hover {
+    color: rgb(3, 6, 151);
+}
+
+.wrapper-inner{
+    display:flex;
+    max-width: 50vw;
+    padding-left: 25vw;
+    padding-top: 12vh;
+    padding-bottom: 2vh;
+    color:rgb(26, 30, 252);
+    font-size: 20px;
+    justify-content: space-between;
+}
+
+.name-project{
+    justify-content:flex-start;
+}
+
+.name-button{
+    font-size:45px;
+}
+
+.notification-button{
+    align-items: center;
+    justify-content:flex-end;
+}
+
+.notifications{
+    font-size: 30px;
+}
+
+.search-bar input{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px
+}
+
+.notification-panel {
+    display: none; /* Скрываем панель по умолчанию */
+    position: absolute;
+    margin-top:4vh;
+    width: 300px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.section-end{
+    border-bottom: rgb(26, 30, 252);
+    position: fixed; /* Закрепляет секцию */
+    width: 100%;
+    bottom: 0;
+    .wrapper-inner{
+        padding-top:2vh;
+        padding-bottom: 1vh;
+        font-size:40px;
+    }
+    background-color:white;
+}
+

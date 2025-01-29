@@ -3,16 +3,12 @@ package com.yafimchyk.draft.controller;
 import com.yafimchyk.draft.entity.MyUser;
 import com.yafimchyk.draft.repository.MyUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
-@RestController
+@Controller
 public class RegistrationController {
 
     @Autowired
@@ -21,10 +17,22 @@ public class RegistrationController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
     @PostMapping("/signup")
-    public ResponseEntity<MyUser> register(@RequestBody MyUser user) {
+    public String addUser(MyUser user, Model model){
+        MyUser userFromDb = myUserRepository.findByUsername(user.getUsername());
+
+        if(userFromDb != null){
+
+            model.addAttribute("message","user exists!");
+            return "signup";
+        }
+
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return new ResponseEntity<>(myUserRepository.save(user), HttpStatus.CREATED);
+
+        myUserRepository.save(user);
+
+        return "redirect:/login";
     }
 
 
