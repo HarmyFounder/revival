@@ -17,10 +17,10 @@
 
 button{
     border: medium none;
-	background-image: none;
-	background: transparent;
-	float: left;
-	background-color: transparent;
+    background-image: none;
+    background: transparent;
+    float: left;
+    background-color: transparent;
     align-items:center;
     cursor: pointer;
     color: rgb(26, 30, 252);
@@ -92,3 +92,42 @@ button:hover {
     background-color:white;
 }
 
+.name{
+    justify-content:center;
+}
+
+.input{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px
+}
+
+.username{
+    display: flex;
+    align-items: center;
+    gap: 10vw; /* Расстояние между текстом и полем ввода */
+    margin-bottom: 10px;
+}
+
+.username-text{
+    white-space: nowrap;
+}
+
+.section-input{
+    .wrapper-inner{
+        flex-direction:column;
+        font-size:30px;
+    }
+}
+
+.password-text{
+    white-space: nowrap;
+}
+
+.password{
+    display: flex;
+    align-items: center;
+    gap: 19vw; /* Расстояние между текстом и полем ввода */
+    margin-bottom: 10px;
+}

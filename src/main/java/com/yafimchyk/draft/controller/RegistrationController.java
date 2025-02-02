@@ -25,7 +25,7 @@ public class RegistrationController {
         if(userFromDb != null){
 
             model.addAttribute("message","user exists!");
-            return "signup";
+            return "signupYo";
         }
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));

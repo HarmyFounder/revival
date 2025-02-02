@@ -16,12 +16,12 @@ public class ContentController {
     
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "loginYo";
     }
 
     @GetMapping("/signup")
     public String signup(){
-        return "signup";
+        return "signupYo";
     }
 
     @GetMapping("/home")

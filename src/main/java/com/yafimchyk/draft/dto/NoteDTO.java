@@ -7,5 +7,6 @@ public class NoteDTO {
 
     String name;
     String content;
+    Long userId;
 
 }

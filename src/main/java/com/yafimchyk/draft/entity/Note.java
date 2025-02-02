@@ -1,9 +1,6 @@
 package com.yafimchyk.draft.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="notes")
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -23,5 +21,8 @@ public class Note {
     String name;
     String content;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false) // Внешний ключ
+    private MyUser user;
 
 }

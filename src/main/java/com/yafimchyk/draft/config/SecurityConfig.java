@@ -47,12 +47,11 @@ public class SecurityConfig {
                 .csrf().disable()
 
                 .formLogin(httpForm ->{
-                    httpForm.loginPage("/login").permitAll();
-                    httpForm.defaultSuccessUrl("/index");
+                    httpForm.loginPage("/login").permitAll().defaultSuccessUrl("/home", true);
 
                 })
                 .authorizeHttpRequests(registry ->{
-                    registry.requestMatchers("/signup","/css/**","/js/**").permitAll();
+                    registry.requestMatchers("/signup","/css/**","/js/**","/StandartImages/**","/font-awesome/**").permitAll();
                     registry.anyRequest().authenticated();
                 })
                 .build();

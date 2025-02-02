@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/SocialStyles.css" th:href="@{/css/SocialStyles.css}">
+  <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css" th:href="@{/font-awesome/css/font-awesome.min.css}">
+  <title>Login</title>
+</head>
+<body>
+<section class = "section-top">
+  <div class="wrapper-inner">
+    <div class="name">
+      <button id="logo">
+        <img th:src="@{/StandartImages/unnamed.jpg}"  src="/static/StandartImages/unnamed.jpg" alt="Bsuir-logo" width = 60>
+      </button>
+      <button id ="name-button" class = "name-button">
+        BSUIR.Net
+      </button>
+    </div>
+  </div>
+</section>
+<section class = "section-input">
+  <div class="wrapper-inner">
+    <form method="post" action="/signup" class="field-enter">
+      <div class="input-data">
+        <div class="username">
+          <label for="username" class = "name-fields">Имя пользователя:</label>
+        </div>
+        <div class="input-username">
+          <input type="text" id="username" name="username" placeholder="Имя пользователя"><br>
+        </div>
+      </div>
+
+      <div class="input-data">
+        <div class="email">
+          <label for="email" class = "enail-fields">Email:</label>
+        </div>
+        <div class="input-email">
+          <input type="text" id="email" name="email" placeholder="Email"><br>
+        </div>
+      </div>
+
+      <div class="input-data">
+        <div class="password">
+          <label for="password" class = "name-fields">Пароль:</label>
+        </div>
+        <div class="input-password">
+          <input type="password" id="password" name="password" placeholder="Пароль"><br>
+        </div>
+      </div>
+
+      <div class="button-sign-up">
+        <button id = "sign-up" class = "sign-up">Зарегистрироваться</button>
+      </div>
+    </form>
+  </div>
+</section>
+</body>
+</html>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="SocialStyles.css">
+
+    <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css" th:href="@{/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="../static/css/SocialStyles.css" th:href="@{/css/SocialStyles.css}">
     <title>BSUIR.Net</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <div class="wrapper-inner">
             <div class="name-project">
                 <button id="logo">
-                    <img src="StandartImages/unnamed.jpg" alt="Bsuir-logo" width = 60>
+                    <img src="/static/StandartImages/unnamed.jpg" th:src="@{/StandartImages/unnamed.jpg}" alt="Bsuir-logo" width = 60>
                 </button>
                 <button id ="name-button" class = "name-button">
                     BSUIR.Net
@@ -227,6 +228,6 @@ https://ua.tribuna.com/blogs/articles/856568/?utm_source=copy
             </button>
         </div>
     </section>
-    <script src="SocialWork.js"></script>
+    <script src="../static/js/SocialWork.js" th:src="@{/js/SocialWork.js}"></script>
 </body>
 </html>

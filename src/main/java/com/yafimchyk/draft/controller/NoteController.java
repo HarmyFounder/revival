@@ -2,6 +2,7 @@ package com.yafimchyk.draft.controller;
 
 import com.yafimchyk.draft.dto.NoteDTO;
 import com.yafimchyk.draft.entity.Note;
+import com.yafimchyk.draft.repository.MyUserRepository;
 import com.yafimchyk.draft.service.NoteService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.List;
 public class NoteController {
 
     private final NoteService noteService;
+    private final MyUserRepository myUserRepository;
 
     @PostMapping("/new")
     public ResponseEntity<Note> addNote(@RequestBody NoteDTO noteDTO) {
@@ -40,6 +42,11 @@ public class NoteController {
     public HttpStatus deleteNote(@PathVariable Long id) {
         noteService.delete(id);
         return HttpStatus.OK;
+    }
+
+    @GetMapping("/{id}/notes")
+    public ResponseEntity<List<Note>> getNotesByUser(@PathVariable Long id) {
+        return new ResponseEntity<>(noteService.findAllByUser(myUserRepository.findById(id).get()), HttpStatus.OK);
     }
 
 }
